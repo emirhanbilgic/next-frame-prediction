@@ -7,10 +7,10 @@ import pandas as pd
 import numpy as np
 import os
 
-# check available GPUs
+# check available gpus
 print(tf.config.list_physical_devices('GPU'))
 
-# connect to Google Drive (assuming you're running this on Colab)
+# connect to Google Drive
 from google.colab import drive
 drive.mount('/content/drive')
 
@@ -97,7 +97,7 @@ comparison_df = pd.DataFrame()
 start_index = 0
 step = 3
 
-while start_index <= 717:
+while start_index <= 717: #717 is for the ram insufficiency 
     test_df = file_info_df[2000+start_index:2000+start_index+step]
     (X_test_image, X_test_statistics), y_test = extract_features_labels(test_df)
     y_test_series = pd.Series(y_test)
