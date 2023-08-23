@@ -25,7 +25,8 @@ def z_score_standardization(series):
 columns_to_standardize = data_no_na.columns[1:26]  
 date_column = data_no_na.columns[0]
 
-#apply z-score standardization to the columns
+#apply z-score standardization to the columns 
+#z-score standardization is highly recommended in historical and wide-range data.
 for col in columns_to_standardize:
     data_no_na[col] = z_score_standardization(data_no_na[col])
 data_standardized = data_no_na
